@@ -1,4 +1,4 @@
-import {Component, NgFor, NgIf} from 'angular2/angular2';
+import {Component} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {CharacterService} from './character.service';
 import {Character} from './character';
@@ -8,15 +8,14 @@ import {Character} from './character';
   template: `
     <h2>Select a Character</h2>
     <ul class="characters">
-      <li *ng-for="#character of characters" (click)="onSelect(character)">
+      <li *ngFor="#character of characters" (click)="onSelect(character)">
         <span class="badge">{{character.id}}</span> {{character.name}}
       </li>
     </ul>
-    <h2 *ng-if="currentCharacter">
+    <h2 *ngIf="currentCharacter">
       {{currentCharacter.name | uppercase}} is my character
     </h2>
   `,
-  directives: [NgFor, NgIf],
   styles: [`
     .characters {list-style-type: none; margin-left: 1em; padding: 0; width: 14em;}
     .characters li { cursor: pointer; }

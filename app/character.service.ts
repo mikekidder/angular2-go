@@ -1,13 +1,12 @@
-import {Character} from './character';
+import {Injectable} from 'angular2/core';import {Character} from './character';
 
+@Injectable()
 export class CharacterService {
 	getCharacters() { return Promise.resolve(CHARACTERS); }
 
 	getCharacter(id: number) {
 		return Promise.resolve(CHARACTERS)
-			.then((characters) => { return characters.filter((c) => {
-				return c.id === id;
-			})[0]});
+			.then(characters => characters.filter(c => c.id === id)[0]);
 	}
 }
 

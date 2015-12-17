@@ -1,26 +1,7 @@
-#Angular 2 Go !
+# Getting Started
 
-[![Join the chat at https://gitter.im/johnpapa/angular2-go](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/johnpapa/angular2-go?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+1. Fork and clone this repo
 
-Simple starter example that gets you going with Angular 2 in minutes.
+1. `npm i`
 
-##Getting Started
-
-1. Clone this repo
-
-1. Run `npm install`
-
-1. Run the TypeScript compiler and watch for changes `npm run tsc`
-
-1. Open 2nd terminal and launch the app in the browser `npm start`
-
-## Running Node and NPM
-
-- [on Windows](http://www.johnpapa.net/tips-for-running-node-and-npm-on-windows/)
-- [on OSX](http://www.johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/)
-
-##Notes
-
-This sample intentionally uses precise versions of Angular 2 and SystemJS so new versions do not break it. I will update these as Angular 2 moves out of Alpha.
-
-This uses the Path Routing Strategy (HTML5 Mode in Angular 1). This is ideal, however since this demo strives for a simple server using live-server, if you refresh the browser when on a deep link (a named route), you will get a 404. Simply go back to the root /.
+1. Run the TypeScript compiler, watch for changes, start the server, and launch the browser `npm start`
