@@ -11,8 +11,8 @@ import {Component} from 'angular2/core';
 	`
 })
 export class DashboardComponent {
-	public name = 'john';
-	public message = '';
+	name = 'john';
+	message = '';
 
 	sayHello() {
 		this.message = 'Hello ' + this.name + '!';

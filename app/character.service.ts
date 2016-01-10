@@ -1,54 +1,31 @@
-import {Injectable} from 'angular2/core';import {Character} from './character';
+import { Injectable } from 'angular2/core';
+import { Http, Response } from 'angular2/http';
+import { Observable, Subscription } from 'rxjs';
+import 'rxjs/add/operator/map';
+
+import { Character } from './character.service';
 
 @Injectable()
 export class CharacterService {
-	getCharacters() { return Promise.resolve(CHARACTERS); }
+  constructor(private _http: Http) { }
+
+  getCharacters() {
+    let observable = this._http.get('app/characters.json')
+      .map(function(response: Response) {
+        return <Character[]>response.json();
+      });
+
+    return observable;
+  }
 
 	getCharacter(id: number) {
-		return Promise.resolve(CHARACTERS)
-			.then(characters => characters.filter(c => c.id === id)[0]);
+    let observable = this._http.get('characters.json')
+      .map((response: Response) => <Character[]>response.json().filter((c: Character) => c.id === id)[0]);
+    return observable;
 	}
 }
 
-var CHARACTERS : Character[] = [
-	{
-		"id": 11,
-		"name": "Aragorn"
-	},
-	{
-		"id": 12,
-		"name": "Meriadoc Brandybuck"
-	},
-	{
-		"id": 13,
-		"name": "Pippin Took"
-	},
-	{
-		"id": 14,
-		"name": "Frodo Baggins"
-	},
-	{
-		"id": 15,
-		"name": "Samwise Gamgee"
-	},
-	{
-		"id": 16,
-		"name": "Gandalf"
-	},
-	{
-		"id": 17,
-		"name": "Boromir"
-	},
-	{
-		"id": 18,
-		"name": "Gimli"
-	},
-	{
-		"id": 19,
-		"name": "Legolas"
-	},
-	{
-		"id": 20,
-		"name": "Elrond"
-	}
-];
+export interface Character {
+	id: number;
+	name: string;
+}
