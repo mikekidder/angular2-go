@@ -19,7 +19,7 @@ export class CharacterService {
   }
 
 	getCharacter(id: number) {
-    let observable = this._http.get('characters.json')
+    let observable = this._http.get('app/characters.json')
       .map((response: Response) => <Character[]>response.json().filter((c: Character) => c.id === id)[0]);
     return observable;
 	}

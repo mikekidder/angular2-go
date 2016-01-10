@@ -18,7 +18,13 @@ export class CharactersComponent implements OnInit {
     this.characters = this.getCharacters();
   }
 
-  onSelect(character: Character) { this.currentCharacter = character; }
+  onSelect(character: Character) {
+    // this.currentCharacter = character;
+    this._characterService.getCharacter(character.id)
+      .subscribe((character: Character) => {
+        this.currentCharacter = character;
+      });
+  }
 
   /////////////////
 
