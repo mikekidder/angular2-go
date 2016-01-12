@@ -10,7 +10,7 @@ export class CharacterService {
   constructor(private _http: Http) { }
 
   getCharacters() {
-    let observable = this._http.get('app/characters.json')
+    let observable = this._http.get('characters.json')
       .map(function(response: Response) {
         return <Character[]>response.json();
       });
@@ -19,7 +19,7 @@ export class CharacterService {
   }
 
 	getCharacter(id: number) {
-    let observable = this._http.get('app/characters.json')
+    let observable = this._http.get('characters.json')
       .map((response: Response) => <Character[]>response.json().filter((c: Character) => c.id === id)[0]);
     return observable;
 	}
