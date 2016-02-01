@@ -1,14 +1,8 @@
-import {Component} from 'angular2/core';
+import { Component } from 'angular2/core';
 
 @Component({
   selector: 'my-dashboard',
-	template: `
-		<h2>Dashboard</h2>
-		<div>Hello {{name}}</div>
-		<input [(ngModel)]="name" />
-		<button (click)="sayHello()">Say Hello</button>
-		<p>{{message}}</p>
-	`
+	templateUrl: 'app/dashboard.component.html'
 })
 export class DashboardComponent {
 	name = 'john';

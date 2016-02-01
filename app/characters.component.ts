@@ -1,7 +1,7 @@
-import {Component, OnInit} from 'angular2/core';
-import {Router} from 'angular2/router';
+import { Component, OnInit } from 'angular2/core';
+import { Router } from 'angular2/router';
 
-import {Character, CharacterService} from './character.service';
+import { Character, CharacterService } from './character.service';
 
 @Component({
   selector: 'my-characters',
@@ -21,9 +21,7 @@ export class CharactersComponent implements OnInit {
   onSelect(character: Character) {
     // this.currentCharacter = character;
     this._characterService.getCharacter(character.id)
-      .subscribe((character: Character) => {
-        this.currentCharacter = character;
-      });
+      .subscribe(character => this.currentCharacter = character);
   }
 
   /////////////////
@@ -33,9 +31,7 @@ export class CharactersComponent implements OnInit {
     this.characters = [];
 
     this._characterService.getCharacters()
-      .subscribe((characters: Character[]) => {
-        this.characters = characters;
-      });
+      .subscribe(characters => this.characters = characters);
 
     return this.characters;
   }

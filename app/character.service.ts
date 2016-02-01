@@ -15,13 +15,11 @@ export class CharacterService {
 
   getCharacters() {
     return this._http.get('characters.json')
-      .map(function(response) {
-        return <Character[]>response.json();
-      });
+      .map((response) => response.json());
   }
 
 	getCharacter(id: number) {
     return this._http.get('characters.json')
-      .map((response) => <Character>response.json().filter((c: Character) => c.id === id)[0]);
+      .map((response) => response.json().filter((c: Character) => c.id === id)[0]);
 	}
 }

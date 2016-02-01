@@ -1,10 +1,10 @@
-import {Component} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import { Component } from 'angular2/core';
+import { HTTP_PROVIDERS } from 'angular2/http';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-import {CharactersComponent} from './characters.component';
-import {DashboardComponent} from './dashboard.component';
-import {CharacterService} from './character.service';
+import { CharactersComponent } from './characters.component';
+import { DashboardComponent } from './dashboard.component';
+import { CharacterService } from './character.service';
 
 @Component({
   selector: 'my-app',
